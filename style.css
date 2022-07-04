@@ -8,8 +8,17 @@ header {
     background-image: url(https://image.jimcdn.com/app/cms/image/transf/none/path/s7b5ad906aff6ab04/backgroundarea/i23b2633d828275ca/version/1462111261/image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
     /* background-size: contain; */
     /* background-attachment: fixed; */
+}
+
+body {
+    background-color: rgb(224, 247, 224);
+}
+
+.collapsed {
+    color: rgb(74, 60, 231)
 }
 
 .nav-link {
