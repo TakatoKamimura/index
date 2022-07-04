@@ -15,3 +15,8 @@ header {
 .nav-link {
     color: white
 }
+
+.icon {
+    width: 26px;
+    height: 26px;
+}
