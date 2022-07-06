@@ -8,7 +8,7 @@ body {
 
 
 header {
-    background-image: url(https://image.jimcdn.com/app/cms/image/transf/none/path/s7b5ad906aff6ab04/backgroundarea/i23b2633d828275ca/version/1462111261/image.jpg);
+    background-image: url(image/header.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,4 +34,9 @@ header {
 .icon {
     width: 26px;
     height: 26px;
+}
+
+.icon-Qiita {
+    width: 22px;
+    height: 22px;
 }
