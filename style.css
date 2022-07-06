@@ -2,20 +2,22 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    background-color: rgb(224, 247, 224);
 }
+
+
 
 header {
     background-image: url(https://image.jimcdn.com/app/cms/image/transf/none/path/s7b5ad906aff6ab04/backgroundarea/i23b2633d828275ca/version/1462111261/image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 0.8;
     /* background-size: contain; */
     /* background-attachment: fixed; */
 }
 
-body {
-    background-color: rgb(224, 247, 224);
-}
+
 
 .collapsed {
     color: rgb(74, 60, 231)
@@ -23,6 +25,10 @@ body {
 
 .nav-link {
     color: white
+}
+
+.nav-link-black {
+    color: black
 }
 
 .icon {

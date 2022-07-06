@@ -5,22 +5,32 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Kamimura Takato's Website</title>
+    <meta name="description" content="上村岳斗のホームページです">
+    <meta name="keywords" content="上村岳斗,かみむら,上村,たかと,岳斗">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
     <script src="/path/to/bootstrap.min.js"></script>
     <script>
         $('#accordion').on('show.bs.collapse', function () {
             $('#accordion .in').collapse('hide');
         });
     </script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 </head>
 
 <body>
     <header>
+
+        <!-- <span class="logo">
+            <a href="https://takatokamimura.github.io/index/">
+                上村岳斗のホームページ
+            </a>
+        </span> -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="https://takatokamimura.github.io/index/">ホーム</a>
@@ -47,14 +57,15 @@
             </li>
         </ul>
         <br>
+        <br>
         <div style="text-align: center">
             <font color="white">
                 <h3>上村　岳斗</h3>
                 <br>
-                <h5>名古屋工業大学<br>
+                <h6>名古屋工業大学<br>
                     工学研究科　情報工学専攻　情報工学系プログラム<br>
                     舟橋研究室<br><br>
-                </h5>
+                </h6>
             </font>
         </div>
     </header>
@@ -66,12 +77,12 @@
                     <div class="panel panel-default">
                         <div class="alert alert-primary" role="alert">
                             <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
+                                <h5 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
                                         自己紹介
                                     </a>
-                                </h4>
+                                </h5>
                             </div>
 
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
@@ -81,7 +92,7 @@
                                     ・生年月日:1999年7月18日<br>
                                     ・出身地:愛知県豊明市<br>
                                     ・趣味:ゲーム、映画、音楽、ネタ番組を見ること<br>
-                                    ・苦手なもの:暑さ、二郎系ラーメン
+                                    ・苦手なもの:暑さ、二郎系ラーメン<br>
                                 </div>
                             </div>
                         </div>
@@ -91,12 +102,12 @@
                     <div class="panel panel-default">
                         <div class="alert alert-primary" role="alert">
                             <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
+                                <h5 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         経歴
                                     </a>
-                                </h4>
+                                </h5>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingTwo">
@@ -115,18 +126,19 @@
                     <div class="panel panel-default">
                         <div class="alert alert-primary" role="alert">
                             <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
+                                <h5 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         発表論文・資格等
                                     </a>
-                                </h4>
+                                </h5>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
                                     <h5>国際学会</h5>
-                                    査読待ち:Analysis of the Impact of COVID-19 on Student Life Based on the Results of a
+                                    査読待ち:Analysis of the Impact of COVID-19 on Student Life Based on the Results
+                                    of a
                                     Survey
                                     <br>
                                     <h5>卒業論文</h5>
@@ -143,6 +155,62 @@
                 </div>
             </div>
         </div>
+        <div style="text-align: center">
+            <h2>研究内容</h2>
+        </div>
+        　学部では、名古屋工業大学が学生に対して毎年行っている「学生生活実態調査」
+        のデータを<br>
+        　データマイニング、テキストマイニングの技術をマイニングすることで<br>
+        　学生が新型コロナウイルスによってどのような影響を与えたかを分析しました。
+        <br>
+        　現在は、テキストチャット付きの動画（Youtubeの配信アーカイブ等）のテキストチャットから
+        その動画の見どころの区間を推定するという研究を行っており<br>
+        　その中で、自然言語処理の技術やニューラルネットワークを用いています。
+        <br>
+        <div style="text-align: center">
+            <h2>所在地</h2>
+        </div><br>
+        <div id="mapid" style="width:100%;height:500px"></div>
+        <script>
+            var mymap = L.map('mapid').setView([35.157054, 136.925114], 15);
+            var meiko = L.circle([35.157054, 136.925114], 100, { color: 'blue', fillOpacity: 0.5 }).addTo(mymap);
+            meiko.bindPopup("Nagoya Institute of Technology").openPopup();
+            L.tileLayer(
+                'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            ).addTo(mymap);
+        </script>
+        <h7 id="link-to-link">
+            <div class="color2">
+                <br>
+                <br>
+                <div style="text-align: center">
+                    <h2>リンク</h2>
+                </div><br>
+                <div class="inner">
+                    <section>
+                        <ul>
+                            <li>
+                                <a class=nav-link-black href="https://takatokamimura.github.io/index/"
+                                    target="_blank">ホーム</a>
+                            </li>
+                            <li><a class="nav-link-black" href="http://www.center.nitech.ac.jp/" target="_blank">
+                                    所属研究室</a></li>
+                            <li><a class="nav-link-black" href="https://www.nitech.ac.jp/"
+                                    target="_brank">所属大学院(名古屋工業大学院)</a></li>
+                            <li><a class="nav-link-black" href="https://github.com/TakatoKamimura"
+                                    target="_blank">Github<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="black" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                    </svg>
+                                </a></li>
+                            <li><a class="nav-link-black" href="https://atcoder.jp/users/nitech_takato">Atcoder
+                                    <img src="https://www.ioi-jp.org/image/atcoder.png" class="icon">
+                                </a></li>
+                        </ul>
+                    </section>
+                </div>
+        </h7>
     </main>
     <!-- <figure class="figure">
             <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/s7b5ad906aff6ab04/backgroundarea/i23b2633d828275ca/version/1462111261/image.jpg"
