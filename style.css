@@ -8,6 +8,7 @@ body {
 .menu {
     background-color: rgb(159, 156, 156);
     position: fixed;
+    right: 0px;
     z-index: 1;
 }
 
