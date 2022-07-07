@@ -47,5 +47,6 @@ body {
 }
 
 #mapid {
+    background-color: aqua;
     z-index: 0;
 }
